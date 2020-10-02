@@ -1,6 +1,6 @@
 import requests
 import json
-
+import PySimpleGUI
 
 class ListaDeRepositorios():
 
@@ -22,6 +22,15 @@ class ListaDeRepositorios():
                 print(dados_api[i]['name'])
         else:
             print(dados_api)
+
+# create interface
+sg.theme('DarkRed1') # theme
+layout = [
+    [sg.Output(size=(14,8))]
+]
+
+window = sg.Window('api git', layout) 
+event, values = window.read()
 
 
 repositorios = ListaDeRepositorios('nadiaaoliverr')
